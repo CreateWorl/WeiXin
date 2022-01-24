@@ -1,0 +1,43 @@
+<view class="detail_index">
+    <swiper interval="1000" circular autoplay indicator-dots="{{true}}">
+        <swiper-item wx:for="{{goodsDetailObj.pics}}" wx:key="pics_id" bindtap="FangDa" data-url="{{item.pics_mid}}">
+            <!-- url 就是传递过去的变量明 可以直接使用 -->
+            <image src="{{item.pics_mid}}" mode="widthFix"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="goodsPrice">￥{{goodsDetailObj.goods_price}}</view>
+<view class="introduce">
+    <view class="leftIntroduce">{{goodsDetailObj.goods_name}}</view>
+    <view class="rightShouCang">
+        <text class="iconfont icon-shoucang1"></text>
+        <view class="shouCang">收藏</view>
+    </view>
+</view>
+<view class="detailIntroduce">
+    <view class="detailText">图文介绍</view>
+    <view class="Introduce">
+        <rich-text nodes="{{goodsDetailObj.goods_introduce}}"></rich-text>
+    </view>
+</view>
+<!-- 下面的客服 分享 加入购物车 -->
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-lianxikefu"></view>
+        <view>客服</view>
+        <button open-type="contact"></button>
+    </view>
+    <view class="tool_item">
+        <view class="iconfont icon-fenxiang"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
+       <!-- switchTab可以跳转tab页面 -->
+       <view class="iconfont icon-gouwuche"></view>
+        <view>购物车</view>
+    </navigator>
+    <view class="tool_item btn_cart " bindtap="handleCartAdd">加入购物车</view>
+                    <!-- //加入购物车方法 handleCartAdd -->
+    <view class="tool_item btn_buy">立即购买</view>
+</view>

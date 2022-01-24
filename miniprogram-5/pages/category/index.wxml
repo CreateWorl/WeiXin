@@ -1,0 +1,40 @@
+<view class="cates">
+    <SearchInput></SearchInput>
+    <view class="cates_container">
+        <!-- 左侧    scroll-view 加上scroll-y属性 可以上下滚动 -->
+        <scroll-view class="left_menu" scroll-y>
+            <!-- 左侧父 -->
+            <!-- 只需要js中的leftMenuList数组 -->
+            <view class="menu_item {{index===DianJiIndex ?'active':''}}" wx:for="{{leftMenuList}}" bindtap="handleIndex" data-index="{{index}}" wx:key="cat_id">
+                {{item}}
+                <!-- 三元运算符 通过索引来给左侧状态
+                           bindtap绑定点击后发生的函数
+                           data-index传递参数 -->
+            </view>
+        </scroll-view>
+        <!-- menu_item 左侧每一类的class -->
+        <!-- 右侧 -->
+        <scroll-view class="right_content" scroll-y scroll-top="{{scrollTop}}">
+            <!-- 右侧父 -->
+            <!-- 一个循环 包含主题和内容（内容中也有一个循环children里面的内面的内容）class为goods_group -->
+            <view class="goods_group" wx:for="{{rightContent}}" wx:for-index="index1" wx:for-item="item1" wx:key="cat_id">
+                <!-- 主题 -->
+                <view class="goods_title">
+                    <!-- goods_title 主题class每一大类中的小类 -->
+                    <text class="xieGang">/</text>
+                    <text class="WenBen">{{item1.cat_name}}</text>
+                    <text class="xieGang">/</text>
+                </view>
+                <!-- 内容 -->
+                <view class="goods_list">
+                    <!-- 商品class goods_list -->
+                    <navigator class="" wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_pid" url="/pages/goods_list/index?cid={{item2.cat_id}}">
+                        <image mode="widthFix" class="" src="{{item2.cat_icon}}"></image>
+                        <view class="goods_name">{{item2.cat_name}}</view>
+                        <!-- 照片对应的名字 -->
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,41 @@
+<view class="index_First">
+    <SearchInput></SearchInput>
+    <view class="index_swiper">
+        <swiper class="swiper_Wai" autoplay="{{true}}" indicator-dots="{{true}}" interval="2000" circular="{{true}}">
+            <swiper-item wx:for="{{swiperList}}" wx::key="goods_id" class="swiper_Nei">
+                <navigator>
+                    <image src="{{item.image_src}}" mode="widthFix"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 轮播图介绍
+1.swiper 默认 宽 100% 高 150px
+2.image 默认 宽 320px 高 240px
+3.该设计原图 宽高 750 *340
+   让swiper 高度 变成和图片一样高
+4.mode="widthFix" 图片等比例放大缩小 -->
+    <!-- 导航栏 -->
+    <view class="index_cate">
+        <navigator wx:for="{{catesList}}" wx:key="name">
+            <image mode="widthFix" src="{{item.image_src}}"></image>
+        </navigator>
+    </view>
+    <!-- 导航栏结束 -->
+    <!-- 楼层 开始 -->
+    <view class="index_floor">
+        <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+            <!-- 标题 -->
+            <view class="floor_title">
+                <image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
+            </view>
+            <!-- 内容 -->
+            <view class="floor_list">
+                <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name" url="{{item2.navigator_url}}">
+                    <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <!-- 楼层 结束 -->
+</view>

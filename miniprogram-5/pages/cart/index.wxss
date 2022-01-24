@@ -1,0 +1,106 @@
+page {
+  padding-bottom: 90rpx;
+}
+.showAddress {
+  border-bottom: 2px solid var(--themeColor);
+  padding: 20rpx;
+}
+.cartContext .mainName {
+  color: var(--themeColor);
+  font-size: 40rpx;
+  border-bottom: 5rpx solid var(--themeColor);
+  padding: 10rpx;
+}
+.cartContext .main {
+  border-bottom: 2rpx solid #000;
+}
+.cartContext .main .mainContext {
+  padding: 10rpx;
+  display: flex;
+}
+.cartContext .main .mainContext .mainLeft {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartContext .main .mainContext navigator {
+  flex: 2;
+}
+.cartContext .main .mainContext navigator image {
+  width: 80%;
+  height: 300rpx;
+}
+.cartContext .main .mainContext .mainRight {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cartContext .main .mainContext .mainRight .goodsName {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  /* 竖向编排 */
+  -webkit-line-clamp: 2;
+}
+.cartContext .main .mainContext .mainRight .goodsPriceNum {
+  display: flex;
+  justify-content: space-between;
+}
+.cartContext .main .mainContext .mainRight .goodsPriceNum .price {
+  display: flex;
+  color: var(--themeColor);
+  justify-content: right;
+  align-items: center;
+  flex: 2;
+}
+.cartContext .main .mainContext .mainRight .goodsPriceNum .goodsNum {
+  flex: 1;
+  display: flex;
+}
+.cartContext .main .mainContext .mainRight .goodsPriceNum .goodsNum .minus {
+  border: 1px solid #000;
+  text-align: center;
+}
+.cartContext .main .mainContext .mainRight .goodsPriceNum .goodsNum .num {
+  text-align: center;
+}
+.cartContext .main .mainContext .mainRight .goodsPriceNum .goodsNum .plus {
+  text-align: center;
+  border: 1px solid #000;
+}
+.gongJu {
+  background-color: aliceblue;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.gongJu .QuanXuan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.gongJu .Mony {
+  padding: 10rpx;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+.gongJu .Mony .heJi {
+  text-align: right;
+}
+.gongJu .Mony .YunFei {
+  text-align: right;
+}
+.gongJu .jieSuan {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--themeColor);
+  font-size: 40rpx;
+}

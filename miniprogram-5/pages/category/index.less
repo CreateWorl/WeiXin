@@ -1,0 +1,57 @@
+/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+  .cates_container {
+    height: ~"calc( 100vh - 90rpx )"; /*   calc()括号中不可以有空格  否则会使两边一起滚动 90rpc是搜索栏的*/
+    display: flex;
+    .left_menu {
+      flex: 2; /*  flex: 2; flex: 5; 
+                                                代表左侧的伸缩盒子占 七分之二
+                                                代表右侧的伸缩盒子占 七分之五
+                                                  */
+      .menu_item {
+        height: 80rpx;
+        display: flex; /* 代表伸缩盒子 */
+        justify-content: center; /* 左右和上下居中 */
+        align-items: center;
+        font-size: 30rpx;
+      }
+      .active {
+        color: var(--themeColor);
+        border-left: 5px solid currentColor;
+      } /* 左侧点击到的状态 */
+    }
+    .right_content {
+      flex: 5;
+      .goods_group {
+        .goods_title {
+          height: 80rpx;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          .xieGang {
+            color: black;
+            padding: 0 10px;
+          }
+        }
+        .goods_list {
+          display: flex;
+          flex-wrap: wrap; /* 占不完 换行 */
+          navigator {
+            width: 33.33%; /* 每个超链接标签只占三分之一 并且居中*/
+            text-align: center;
+            image {
+              width: 50%;
+            }
+            .goods_name {
+              font-size: 30rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+}

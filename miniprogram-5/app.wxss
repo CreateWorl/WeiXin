@@ -1,0 +1,17 @@
+@import "./styles/iconfont.wxss";
+page,
+image,
+view {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+page {
+    --themeColor: #da5f51;
+}
+
+view {
+    color: rgb(0, 0, 0);
+}

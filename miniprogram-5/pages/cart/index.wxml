@@ -1,0 +1,71 @@
+<!-- 获取地址 -->
+<view class="addressInfo">
+    <view class="address_btn" wx:if="{{!address.userName}}">
+        <button type="primary" plain bindtap="dianJi">获取地址</button>
+    </view>
+    <view class="showAddress" wx:else>
+        <view class="userName">收件人：{{address.userName}}</view>
+        <view class="userPhone">电话：{{address.telNumber}}</view>
+        <view class="userAddress">地址：{{address.provinceName}}{{address.detailInfo}}</view>
+    </view>
+</view>
+<!-- 购物车内容 -->
+<view class="cartContext">
+    <view class="mainName">购物车</view>
+    <block wx:if="{{cart.length===0}}">
+        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190906%2F6644c676629c4203a227f9ff4273923e.gif&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645543114&t=76fa979d83daff1384141413d63cb0b0" />
+    </block>
+    <block wx:else>
+        <view class="main" wx:for="{{cart}}" wx:key="goods_name">
+            <view class="mainContext">
+                <!-- 复选框 -->
+                <view class="mainLeft">
+                    <checkbox-group bindchange="handleChecked" data-id="{{item.goods_id}}">
+                        <checkbox checked="{{item.checked}}"></checkbox>
+                        <!-- {item.checked}} 少一个{ 改代码 一个多小时 -->
+                    </checkbox-group>
+                </view>
+                <!-- 商品图片 -->
+                <navigator class="mainMiddle" url="" open-type="navigate">
+                    <image src="{{item.goods_small_logo}}" node="widthFix" />
+                </navigator>
+                <!-- 商品信息 -->
+                <view class="mainRight">
+                    <view class="goodsName">{{item.goods_name}}</view>
+                    <view class="goodsPriceNum">
+                        <view class="price">￥{{item.goods_price}}</view>
+                        <view class="goodsNum">
+                            <view class="minus" bindtap="handlePlusMin" data-id="{{item.goods_id}}" data-operation="{{-1}}">
+                                -
+                            </view>
+                            <view class="num">{{item.num}}</view>
+                            <view class="plus" bindtap="handlePlusMin" data-id="{{item.goods_id}}" data-operation="{{1}}">
+                                +
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<!-- 1 标题购物车 -->
+<!-- 2 .  内容 
+         复选框
+         图片
+         名字
+         价格
+         加减 -->
+<!-- 底部工具栏 -->
+<view class="gongJu">
+    <view class="QuanXuan">
+        <checkbox-group bindchange="handleQuanXuan">
+            <checkbox checked="{{allChecked}}">全选</checkbox>
+        </checkbox-group>
+    </view>
+    <view class="Mony">
+        <view class="heJi">合计：￥{{totalPrice}}</view>
+        <view class="YunFei">包含运费</view>
+    </view>
+    <view class="jieSuan" bindtap="handleZhiFu">结算({{totalNum}})</view>
+</view>

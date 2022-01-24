@@ -1,0 +1,33 @@
+/* pages/goods_list/index.wxss */
+.first_tab {
+  .goods_item {
+    border-bottom: 1rpx solid rgb(177, 170, 170);
+    display: flex;
+    .goods_img_wrap {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      image {
+        width: 80%;
+      }
+    }
+    .goods_info_wrap {
+      flex: 3;
+      display: flex;
+      flex-direction: column; //竖直方向
+      justify-content: space-around; //空白环绕
+      .goods_name {
+        display: -webkit-box; //定义为盒子显示
+        overflow: hidden; //文本溢出隐藏
+        //文本溢出隐藏为省略豪
+        -webkit-box-orient: vertical; /* 竖向编排 */
+        -webkit-line-clamp: 2; /* 只显示两行 */
+      }
+      .goods_price {
+        color: var(--themeColor);
+        font-size: 32rpx;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<!-- 这个组件包括标题和内容 -->
+<view class="tabs">
+    <view class="tabs_title">
+        <view class="tabs_son {{item.isActive? 'active':''}}" wx:for="{{tabs}}" wx:for-index="index" wx:for-item="item" wx:key="id" bindtap="DianJi" data-index="{{index}}">
+            {{item.name}}
+        </view>
+    </view>
+    <view class="tabs_content">
+        <slot></slot>
+        <!-- 加上这个标签  父类的TabInput才会显示 -->
+    </view>
+</view>

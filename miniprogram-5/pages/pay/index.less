@@ -1,0 +1,96 @@
+page {
+  padding-bottom: 90rpx;
+}
+.showAddress {
+  border-bottom: 2px solid var(--themeColor);
+  padding: 20rpx;
+}
+.cartContext {
+  .mainName {
+    color: var(--themeColor);
+    font-size: 40rpx;
+    border-bottom: 5rpx solid var(--themeColor);
+    padding: 10rpx;
+  }
+  .main {
+    border-bottom: 2rpx solid #000;
+    .mainContext {
+      padding: 10rpx;
+      display: flex;
+
+      .mainLeft {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      navigator {
+        flex: 2;
+
+        image {
+          width: 90%;
+          height: 300rpx;
+        }
+      }
+      .mainRight {
+        flex: 3;
+        display: flex;
+        flex-direction: column; //竖直
+        justify-content: space-around; //水平环绕
+        .goodsName {
+          display: -webkit-box; //定义为盒子显示
+          overflow: hidden; //文本溢出隐藏
+          //文本溢出隐藏为省略豪
+          -webkit-box-orient: vertical; /* 竖向编排 */
+          -webkit-line-clamp: 2;
+        }
+        .goodsPriceNum {
+          display: flex;
+          justify-content: space-between;
+          .price {
+            display: flex;
+            color: var(--themeColor);
+            justify-content: right;
+            align-items: center;
+            flex: 2;
+          }
+          .goodsNum {
+            flex: 1;
+            display: flex;
+            .num {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.gongJu {
+  background-color: aliceblue;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  .Mony {
+    padding: 10rpx;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+    .heJi {
+      text-align: right;
+    }
+    .YunFei {
+      text-align: right;
+    }
+  }
+  .jieSuan {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--themeColor);
+    font-size: 40rpx;
+  }
+}

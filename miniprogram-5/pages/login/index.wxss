@@ -1,0 +1,5 @@
+button {
+    position: absolute;
+    top: 20rpx;
+    left: 20%;
+}

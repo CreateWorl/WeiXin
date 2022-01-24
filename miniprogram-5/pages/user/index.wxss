@@ -1,0 +1,10 @@
+.top .topContext {
+  height: 45vh;
+  background-color: var(--themeColor);
+}
+.top .topContext .topImage {
+  -webkit-filter: blur(5px);
+  /* Chrome, Safari, Opera */
+  filter: blur(3px);
+  height: 45vh;
+}
