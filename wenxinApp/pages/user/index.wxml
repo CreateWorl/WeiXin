@@ -1,9 +1,3 @@
-<view class="top">
-    <view class="topContext">
-        <image src="{{userInfo.avatarUrl}}" class="topImage" />
-       <!--  <view class="topLitleImage">
-            <image src="{{userInfo.avatarUrl}}" class="litleImage" />
-            <view class="userName">{{userInfo.nickName}}</view>
-        </view> -->
-    </view>
-</view>
+<button type="primary" plain="{{true}}" open-type="getUserProfile" bindtap="getUserProfile">
+    登录
+</button>
